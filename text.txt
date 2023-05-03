@@ -1,0 +1,16 @@
+then use 
+products.[i].catogory?products.[i].category:products.[i].brand
+
+
+in node app.js
+
+let menu=[
+    {link:'/', name:'home'},
+    {link:'/category', name:'Category'},
+    {link:'/products', name:'Products'},
+]
+
+in ejs
+<% for(i=0;i<menu.length;i++>)%{>
+<%=menu.[i].link%>
+<%}%>
