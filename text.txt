@@ -63,4 +63,8 @@ mongoDB.connect(url,(err,doc)=>{
 })
 
 
+in ejs
+
+<a href="/products/category/<%= data.[i]._id" />
+
 
