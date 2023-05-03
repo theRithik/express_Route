@@ -38,3 +38,29 @@ categoryRoute.route('/details')
 return categoryRoute
 }
 module.exports= router
+
+
+
+let mongoDB = require('mongoDB').mongoClient
+
+categoryRoute.route('/products/:id)
+.get((res,req)=>{
+    let id = req.params.id
+mongoDB.connect(url,(err,doc)=>{
+    if(err){
+        console.log(err)
+    }
+    else{
+        let test = doc.db('dbName')
+        test.collection('collectionName').find({category_id:Number(id)}).toArray((err,result)=>{
+            if(err) throw err;
+            else{
+                res.render('category',{data:result})
+            }
+        })
+    }
+})
+})
+
+
+
