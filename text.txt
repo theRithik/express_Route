@@ -14,3 +14,27 @@ in ejs
 <% for(i=0;i<menu.length;i++>)%{>
 <%=menu.[i].link%>
 <%}%>
+
+
+
+OR
+
+app.js
+
+let categoryRoute = require('./src/routes/category')(menu)
+let productRoute = require('./src/routes/products')(menu)
+
+category.js
+function router(menu){
+categoryRoute.route('/')
+    .get((req,res)=>{
+        res.send(details)
+        //res.render('category.ejs,{menu})
+})
+categoryRoute.route('/details')
+.get((req,res)=>{
+    res.send('it is working')
+})
+return categoryRoute
+}
+module.exports= router
