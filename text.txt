@@ -68,3 +68,14 @@ in ejs
 <a href="/products/category/<%= data.[i]._id" />
 
 
+
+redis < 6379
+
+redis server
+redis-cli
+KEY *
+set city 'delhi' ex 10000
+get city
+ npm i redis@3.1.2
+
+
